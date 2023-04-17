@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  mockServer: false,
+  backend: {
+    occ: {
+      baseUrl: 'https://spartacus-demo.eastus.cloudapp.azure.com:8443',
+      prefix: '/occ/v2/',
+    },
+  }
 };
 
 /*
