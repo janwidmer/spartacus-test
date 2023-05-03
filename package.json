@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "dev": "ng run spartacus-test:serve",
     "dev:ssr": "ng run spartacus-test:serve-ssr",
     "serve:ssr": "node dist/spartacus-test/server/main.js",
     "build:ssr": "ng build && ng run spartacus-test:server",
@@ -28,6 +29,7 @@
     "@ngrx/effects": "^14.3.0",
     "@ngrx/router-store": "^14.3.0",
     "@ngrx/store": "^14.3.0",
+    "@ngrx/store-devtools": "~14.3.3",
     "@nguniversal/express-engine": "^14.2.3",
     "@spartacus/assets": "~5.2.0",
     "@spartacus/cart": "~5.2.0",
@@ -68,10 +70,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "msw": "~1.1.0",
     "typescript": "~4.7.2"
-  },
-  "msw": {
-    "workerDirectory": "src"
   }
 }
