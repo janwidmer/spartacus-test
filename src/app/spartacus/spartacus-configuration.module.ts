@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from '@spartacus/assets';
-import { FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
-import { defaultCmsContentProviders, layoutConfig, mediaConfig } from '@spartacus/storefront';
-import { environment } from '../../environments/environment';
 import { CheckoutConfig } from '@spartacus/checkout/base/root';
+import { AuthConfig, FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
+import { defaultCmsContentProviders, layoutConfig, mediaConfig, ViewConfig } from '@spartacus/storefront';
+import { environment } from '../../environments/environment';
 
 @NgModule({
   declarations: [],
   imports: [],
   providers: [
+    ...defaultCmsContentProviders,
     provideConfig(layoutConfig),
-    provideConfig(mediaConfig), ...defaultCmsContentProviders,
+    provideConfig(mediaConfig),
     provideConfig(<OccConfig>{
       backend: {
-        ...environment.backend
+        occ: {
+          prefix: environment.backend.occ.prefix,
+          baseUrl: environment.backend.occ.baseUrl,
+        }
       },
     }),
     provideConfig(<SiteContextConfig>{
@@ -33,7 +37,18 @@ import { CheckoutConfig } from '@spartacus/checkout/base/root';
     }),
     provideConfig(<CheckoutConfig>{
       checkout: {
-        guest: true,
+        guest: true
+      }
+    }),
+    provideConfig(<AuthConfig>{
+      authentication: {
+        client_id: 'mobile_android',
+        client_secret: 'secret',
+      },
+    }),
+    provideConfig(<ViewConfig>{
+      view: {
+        infiniteScroll: true
       }
     })
   ]
