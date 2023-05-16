@@ -32,7 +32,9 @@
                 "input": "./node_modules/@spartacus/smartedit/assets",
                 "output": "assets/"
               },
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/mockServiceWorker.js",
+              "src/mockServiceWorker.js"
             ],
             "styles": [
               "src/styles.scss",
