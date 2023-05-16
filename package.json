@@ -63,6 +63,7 @@
     "@faker-js/faker": "~7.6.0",
     "@nguniversal/builders": "~14.2.3",
     "@spartacus/schematics": "~5.2.0",
+    "@types/events": "~3.0.0",
     "@types/express": "~4.17.0",
     "@types/jasmine": "~4.0.0",
     "@types/node": "~14.18.43",
